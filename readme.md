@@ -11,14 +11,15 @@ I want a random student picker
 so that i don't need to think about calling on students
 
 ## Potential Features
-* I dont want to manually keep track of a list of students - Slack API to provide data
 * Keep track of who answered correctly
-* keep track of points
 * reset
+* Loading spinner when pickingRandom
 * Tinder-style UI for correct or incorrect
-  ** buttons
-  ** swipe
-  ** keypress 
+  ** buttons?
+  ** swipe?
+  ** keypress?
+* keep track of points
+* Some way to block student from being chosen (if they are absent)
 
 ## Wireframe
 ![Wireframe](wireframe.jpg)
