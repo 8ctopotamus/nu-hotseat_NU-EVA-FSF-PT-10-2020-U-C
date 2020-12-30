@@ -1,3 +1,10 @@
+# NU Hotseat App
+Pick a random student so I don't have to :D
+
+## Develop
+1. Open folder in terminal
+2. Run `npx http-server`
+
 ## User Story
 As an Instructor
 I want a random student picker
@@ -15,3 +22,4 @@ so that i don't need to think about calling on students
 
 ## Wireframe
 ![Wireframe](wireframe.jpg)
+
