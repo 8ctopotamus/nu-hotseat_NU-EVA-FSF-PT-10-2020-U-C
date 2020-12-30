@@ -1,14 +1,13 @@
-const token = 'xoxb-1438612474789-1616816439825-XxHceAx0Tlpjo8XW47CSE9wg'
-const endpoint = `https://slack.com/api/users.list?token=${token}`
-
+// const token = 'YOUR_SLACK_TOKEN_HERE'
+// const endpoint = `https://slack.com/api/users.list?token=${token}`
+const endpoint = 'userlist.json'
 const waitList = document.getElementById('waitlist')
 const correctamundoList = document.getElementById('correctamundo')
 
 fetch(endpoint)
-  .then(function(response) {
-    return response.json()
-  })
-  .then(function(json) {
+  .then(response => response.json())
+  .then(json => {
+    console.log(json)
     const membersHTML = json.members
       .filter(member => !member.is_bot)
       .filter(member => !member.is_admin)
