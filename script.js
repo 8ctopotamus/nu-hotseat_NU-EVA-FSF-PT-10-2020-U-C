@@ -18,9 +18,11 @@ const hotseatimg= document.querySelector("#hotseat img");
 const hotseatH2= document.querySelector("#hotseat h2")
 
 let waitList =[];
+let removedWaitList =[];
 let correctMundo =[];
 let randomStudent;
 let randomIdx;
+
 
 const pickRandom = ()=>{
    randomIdx= Math.floor(Math.random()*waitList.length)
@@ -48,28 +50,36 @@ const addCrrctMundo = ()=>{
    }).join("")
    console.log(crrctString)
    correctMundoListUL.innerHTML = crrctString
+
+   removeFrmWaitList(randomIdx)
    }
 
-// const addCrrctMundo = function(){
-//   correctMundo.push(randomStudent)
-//  console.log(correctMundo)
-//  const html = correctMundo.map(correctStudent =>crrctHTMLString(correctStudent)).join("")
-//  console.log(html)
-//    correctMundoListUL.innerHTML = correctMundo.map(correctStudent =>crrctHTMLString(correctStudent)).join("")
+const removeFrmWaitList = (index)=>{
+  removedWaitList = waitList.splice(index, 1)
+  console.log(removedWaitList)
+  console.log(waitList)
 
-// }
+  const removedHTML= waitList.map(member =>
+    {
+      return `
+     <li data-id="${member.id}" class="member">
+     <img src="${member.profile.image_72}" alt="Image of ${member.profile.real_name}"/>
+     <h4>${member.profile.real_name}</h4>
+     </li>
+     ` }).join("")
+ 
+ waitListUL.innerHTML = removedHTML
+   
+   
 
-
-function crrctHTMLString(correctStudent){
-   console.log(correctStudent.id)
-   return `<li data-id="${correctStudent.id}" class="correct-mundo">
-     <img src="${correctStudent.profile.image_72}" alt="Image of ${correctStudent.profile.real_name}"/>
-       <h4>${correctStudent.profile.real_name}</h4>
-       </li>`;
 }
 
+
+
+
+
 const renderList = ()=>{
-   const membersHTML= waitList.map(member =>
+ const membersHTML= waitList.map(member =>
    {
      return `
     <li data-id="${member.id}" class="member">
@@ -79,6 +89,7 @@ const renderList = ()=>{
     ` }).join("")
 
 waitListUL.innerHTML = membersHTML
+
 }
 
 
@@ -102,3 +113,4 @@ console.log(waitList)
 
 randomBtn.addEventListener("click", pickRandom)
 correctBtn.addEventListener("click", addCrrctMundo)
+// correctBtn.addEventListener("click", removeWaitList)

@@ -68,3 +68,9 @@ body {
   
   .grid-item {
     text-align: center;}
+
+  
+
+ .hide{
+    display: none;
+  }
