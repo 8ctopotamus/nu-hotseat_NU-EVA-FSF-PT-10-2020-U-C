@@ -12,6 +12,7 @@ const correctMundoListUL = document.querySelector("#correctMundo");
 const randomBtn = document.getElementById("random-btn");
 const correctBtn = document.getElementById("correct-btn")
 const incorrectBtn = document.getElementById("incorrect-btn")
+const resetBtn = document.getElementById("reset-btn")
 const hotseatimg= document.querySelector("#hotseat img");
 
 
@@ -48,7 +49,6 @@ const addCrrctMundo = ()=>{
       `;
    
    }).join("")
-   console.log(crrctString)
    correctMundoListUL.innerHTML = crrctString
 
    removeFrmWaitList(randomIdx)
@@ -57,7 +57,6 @@ const addCrrctMundo = ()=>{
 const removeFrmWaitList = (index)=>{
   removedWaitList = waitList.splice(index, 1)
   console.log(removedWaitList)
-  console.log(waitList)
 
   const removedHTML= waitList.map(member =>
     {
@@ -68,14 +67,9 @@ const removeFrmWaitList = (index)=>{
      </li>
      ` }).join("")
  
- waitListUL.innerHTML = removedHTML
+ waitListUL.innerHTML = removedHTML   
    
-   
-
 }
-
-
-
 
 
 const renderList = ()=>{
@@ -91,6 +85,29 @@ const renderList = ()=>{
 waitListUL.innerHTML = membersHTML
 
 }
+
+const resetList = ()=>{
+  correctMundoListUL.innerHTML =""
+  waitListUL.innerHTML =""
+
+  waitList.push(correctMundo)
+  const resetList = waitList.flat()
+  console.log(resetList)
+
+  const resetHTML= resetList.map(member =>
+    {
+      return `
+     <li data-id="${member.id}" class="member">
+     <img src="${member.profile.image_72}" alt="Image of ${member.profile.real_name}"/>
+     <h4>${member.profile.real_name}</h4>
+     </li>
+     ` }).join("")
+ 
+ waitListUL.innerHTML = resetHTML
+
+
+}
+
 
 
 
@@ -113,4 +130,5 @@ console.log(waitList)
 
 randomBtn.addEventListener("click", pickRandom)
 correctBtn.addEventListener("click", addCrrctMundo)
+resetBtn.addEventListener("click",resetList)
 // correctBtn.addEventListener("click", removeWaitList)
