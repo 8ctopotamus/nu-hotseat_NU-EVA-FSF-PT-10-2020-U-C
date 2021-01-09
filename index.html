@@ -1,39 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NU Hotseat App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NU Hotseat App</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Neucha&family=Permanent+Marker&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 <body>
-  <div class="grid-container">
-    <div class="grid-item">
-      <h1>NU HOTSEAT</h1>
+   <div class="grid-container">
+       <div class="grid-item">
+        <h1>NU HOTSEAT</h1>
+        
+        <button id="random-btn">Pick random Student</button>
+                 <div class="answerBox">
+                     <button id="correct-btn">Correct</button>
+                     <button id="incorrect-btn">InCorrect</button>
+                 </div>
+        <button id="reset-btn">Reset</button>
+           <div id="hotseat">
+               <img/>
+                <h2></h2>
+           </div> 
+       </div>
+       <div class="grid-item">
+      
+           <h3>WaitList</h3>
+           <ul id="waitlist"></ul>
+           <h3>CorrectMundo List</h3>
+           <ul id="correctMundo"></ul>
+       </div>
+   </div>
 
-<!-- <button>Correct</button>
-      <button>Incorrect</button> -->
-      <button id="random-btn">Pick Random Student</button>
-      <button>Reset</button>
-
-      <div id="hotseat">
-        <img />
-        <h2></h2>
-      </div>
-     
-    </div>
-    <div class="grid-item">
-      <h3>Waitlist</h3>
-      <ul id="waitlist"></ul>
-
-      <h3>Correctamundo List</h3>
-      <ul id="correctamundo"></ul>
-    </div>
-  </div>
 
 
-  <script src="app.js"></script>
+
+  <script src="script.js"></script>  
 </body>
 </html>
